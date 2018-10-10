@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { eventBus } from "../../main.js";
+
 export default {
   props: {
     myName: {
@@ -26,9 +28,13 @@ export default {
         .join("");
     },
     resetName() {
-      this.myName = "lsh";
-      this.$emit("nameWasReset", this.myName);
+      this.$emit("nameWasReset", "lsh");
     }
+  },
+  created() {
+    // eventBus.$on("ageWasEdit", age => {
+    //   this.userAge = age;
+    // });
   }
 };
 </script>
@@ -39,4 +45,3 @@ div {
   padding: 30px;
 }
 </style>
-

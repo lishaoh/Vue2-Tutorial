@@ -15,11 +15,14 @@ div {
 </style>
 
 <script>
+import { eventBus } from "../../main.js";
 export default {
   props: ["userAge"],
   methods: {
     editAge() {
-      this.userAge = 28;
+      eventBus.changeAge(28);
+      // this.userAge = 28;
+      // eventBus.$emit("ageWasEdit", 28);
     }
   }
 };
